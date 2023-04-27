@@ -5,4 +5,18 @@
   text-align: center;
 }
 
+.containerFrame {
+  width: 100%;
+  height: 100%;
+}
+
+.iframeExtend {
+
+  height: 500px;
+  width: 85%;
+}
+
+.container-fluid.right {
+  text-align: right;
+}
 

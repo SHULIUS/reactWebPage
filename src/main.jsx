@@ -1,20 +1,31 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Nav from './Components/navBar_Container.jsx'
-import Card from './Components/Card_Container.jsx'
-import Frame_Container from './Components/Frame_Container.jsx'
-import Footer_container from './Components/Footer_container.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
+import Navbar from './Components/navBar_Container.jsx';
 
+import Home from './Components/Home.jsx';
+import About from './Components/About.jsx';
+import Contact from './Components/Contact.jsx';
+import Login from './Components/Login.jsx';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
+
 root.render(
-  <React.Fragment>
-    <Nav/>
-    <Card/>
-    <Frame_Container/>
-    <Footer_container/>
-  </React.Fragment>
-  
-)
+   
+  <BrowserRouter>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
+  </BrowserRouter>
+);
+
+
+
+

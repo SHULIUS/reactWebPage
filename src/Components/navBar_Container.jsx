@@ -1,41 +1,55 @@
-import React from 'react'
-import img from '../img/logo.jpg'
-import '../App.css'
+import React from 'react';
+import img from '../img/logo.jpg';
+import { Link } from 'react-router-dom';
+import '../App.css';
 
-
-export default function Nav() {
+export default function Navbar() {
   return (
-    /* navBar Container  */
+    <nav className="navbar navbar-expand-lg navbar-dark navbar-expand-md bg-primary">
+      <div className="container-fluid">
+        <img className="nav-item" src={img} alt="Logo" width="70" />
+        <div className="container-fluid.right">
+          <button
+            className="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarColor01"
+            aria-controls="navbarColor01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-expand-md bg-primary">
-    <div class="container-fluid">
-      <img class="nav-item" src={img} alt="Logo" width="70" />
-      <div class="container-fluid.right">
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home
-                <span class="visually-hidden">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Login</a>
-            </li>
-          </ul>
-          
+          <div className="collapse navbar-collapse" id="navbarColor01">
+            <ul className="navbar-nav me-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to="/" aria-current="page">
+                  Home
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">
+                  Contact
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-  
-  )
+    </nav>
+  );
 }
